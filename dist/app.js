@@ -12,17 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const bodyParser = __importStar(require("body-parser"));
 const express_1 = __importDefault(require("express"));
+const routes_1 = require("./routes/routes");
 class App {
     constructor() {
+        this.routes = new routes_1.Routes();
         this.config();
+        this.routes.routes(this.app);
     }
     config() {
         this.app = express_1.default();
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
-        this.app.route("/").get((req, res, next) => {
-            res.status(200).send("Project is scaffolded");
-        });
         this.app.use((req, res, next) => {
             return next();
         });
