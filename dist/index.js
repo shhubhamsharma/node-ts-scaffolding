@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const http = __importStar(require("http"));
 const app_1 = __importDefault(require("./app"));
 http.createServer(app_1.default).listen(9000, () => {
+    console.log("running");
     // tslint:disable-next-line:no-console
     console.log("Server started");
 });

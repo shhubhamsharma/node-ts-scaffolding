@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "scaffolding for node typescript",
   "scripts": {
+    "run":"tsc -w & node --watch dist/index.js",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "prestart": "npm run build && node dist\\index.js",

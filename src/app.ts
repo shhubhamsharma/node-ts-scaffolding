@@ -13,6 +13,7 @@ class App {
     public config(): void {
 
         this.app = express();
+        console.log(this.app)
         this.app.use(bodyParser.json());
 
         this.app.use(bodyParser.urlencoded({ extended: false }));
